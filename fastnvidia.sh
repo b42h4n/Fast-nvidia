@@ -5,7 +5,7 @@
 set -e
 
 if [[ $EUID -ne 0 ]]; then
-    echo "Запустите скрипт от root или через sudo"
+    echo "Error: Run script as root or use sudo ./fastnvidia.sh"
     exit 1
 fi
 
@@ -33,9 +33,9 @@ apt update
 apt install -y nvidia-open
 
 # Перезагрузка
-read -p "Установка завершена. Перезагрузить сейчас? (y/Y): " reply
+read -p "Installed succesful. Reboot now? (y/N): " reply
 if [[ "$reply" == "y" || "$reply" == "Y" ]]; then
     reboot
 else
-    echo "Ok. Не забудьте перезагрузиться позже."
+    echo "Ok. Dont forget to reboot system!"
 fi
