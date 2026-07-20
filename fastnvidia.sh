@@ -32,7 +32,6 @@ rm cuda-keyring_1.1-1_all.deb
 apt update
 apt install -y nvidia-open
 
-# Перезагрузка
 read -p "Installed succesful. Reboot now? (y/N): " reply
 if [[ "$reply" == "y" || "$reply" == "Y" ]]; then
     reboot
